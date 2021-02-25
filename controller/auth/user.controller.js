@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require('jsonwebtoken')
 const { loginValidation, registerValidation } = require("../../utils/joi");
 const userSchema = require("../../modal/userSchema");

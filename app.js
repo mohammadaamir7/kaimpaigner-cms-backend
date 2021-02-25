@@ -13,9 +13,6 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use("/", Router);
 
-if(process.env.NODE_ENV === 'production'){
-  app.use(express.static('../../Front-End/build'))
-}
 
 
 app.listen(process.env.PORT || 5000, () => {
