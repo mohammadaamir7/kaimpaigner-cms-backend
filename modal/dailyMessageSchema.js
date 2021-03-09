@@ -11,7 +11,9 @@ const messageSchema = new mongoose.Schema({
     createdBy: { type: String, required: true },
     contentArray:[
         {type: String}
-    ]
+    ],
+    Start_Date: { type: Date, required: true },
+    End_Date : { type: Date, required: true }
 }, {
     timestamps: true
 })

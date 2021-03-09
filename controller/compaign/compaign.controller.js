@@ -885,6 +885,8 @@ module.exports.addMessage = async (req, res) => {
             newMessage.createdBy = req.body.createdBy
             newMessage.Attacement = req.body.attachement
             newMessage.contentArray = req.body.contentArray
+            newMessage.Start_Date = req.body.startDate
+            newMessage.End_Date = req.body.endDate
 
             await newMessage.save()
                 .then(() => {
@@ -978,6 +980,8 @@ module.exports.updateMessage = async (req, res) => {
                 newMessage.createdBy = req.body.createdBy
                 newMessage.Attacement = req.body.attachement
                 newMessage.contentArray = req.body.contentArray
+                newMessage.Start_Date = req.body.startDate
+                newMessage.End_Date = req.body.endDate
     
                 newMessage.save()
                     .then(() => {
@@ -1451,4 +1455,169 @@ module.exports.deleteProcess = async (req, res) => {
     } catch(error){
         return res.json({ message: "server crashed", error });
     }
+}
+
+module.exports.ganttChart = async (req, res) => {
+
+
+    var f= []
+    var data1 = []
+    var data2 = []
+    var data3 = []
+    var data4 = []
+    var data5 = []
+    var data6 = []
+    var data7 = []
+    var data8 = []
+    data8 = await messageSchema.find({createdBy: req.params.username}) 
+
+    var events = await eventSchema.find({createdBy: req.params.username})
+
+    events.forEach((child) => {
+        if(child.Event[0] !== undefined){
+                
+                data1.push(child.Event[0])
+        
+        }
+
+        if(child.Digital_Add[0] !== undefined){
+            
+                data2.push(child.Digital_Add[0])
+            
+        }
+        
+        if(child.Field_Operation[0] !== undefined){
+            
+                data3.push(child.Field_Operation[0])
+            
+        }
+        
+        if(child.Media_Ad[0] !== undefined){
+            
+                data4.push(child.Media_Ad[0])
+            
+        }
+
+        if(child.OOH_Ad[0] !== undefined){
+            
+                data5.push(child.OOH_Ad[0])
+            
+        }
+        
+        if(child.Mailbox[0] !== undefined){
+            
+                data6.push(child.Mailbox[0])
+            
+        }
+        
+        if(child.Research_Planning[0] !== undefined){
+            
+                data7.push(child.Research_Planning[0])
+            
+        }
+        
+    })
+
+    data1.forEach(element => {
+        var c = {
+            category: "Event",
+            start : element.Start_Date,
+            end : element.End_Date,
+            color: randomColor(),
+            task: element["Title"]
+        }
+        f.push(c)       
+    });
+
+    data2.forEach(element => {
+
+        var c = {
+            category: "Digital Add",
+            start : element.Start_Date,
+            end : element.End_Date,
+            color: randomColor(),
+            task: element["Title"]
+        }
+        f.push(c)       
+    });
+
+    data3.forEach(element => {
+        
+        var c = {
+            category: "Field Operation",
+            start : element["Start_Date"],
+            end : element["End_Date"],
+            color: randomColor(),
+            task: element["Title"]
+        }
+        f.push(c)       
+    });
+
+    data4.forEach(element => {
+        
+        var c = {
+            category: "Media Add",
+            start : element["Start_Date"],
+            end : element["End_Date"],
+            color: randomColor(),
+            task: element["Title"]
+        }
+        f.push(c)       
+    });
+
+    data5.forEach(element => {
+        
+        var c = {
+            category: "OOH Add",
+            start : element["Start_Date"],
+            end : element["End_Date"],
+            color: randomColor(),
+            task: element["Title"]
+        }
+        f.push(c)       
+    });
+
+    data6.forEach(element => {
+        
+        var c = {
+            category: "Mailbox",
+            start : element["Start_Date"],
+            end : element["End_Date"],
+            color: randomColor(),
+            task: element["Title"]
+        }
+        f.push(c)       
+    });
+
+    data7.forEach(element => {
+        
+        var c = {
+            category: "Research planning",
+            start : element["Start_Date"],
+            end : element["End_Date"],
+            color: randomColor(),
+            task: element["Title"]
+        }
+        f.push(c)       
+    });
+
+    data8.forEach(element => {
+        
+        var c = {
+            category: "Daily Message",
+            start : element["Start_Date"],
+            end : element["End_Date"],
+            color: randomColor(),
+            task: element["Title"]
+        }
+        f.push(c)       
+    });
+
+    
+    return res.json(f)
+
+        
+
+
+
 }

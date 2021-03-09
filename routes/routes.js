@@ -33,6 +33,7 @@ router.route("/api/listEvent/:username").get(Compaigns.listEventUser);
 router.route("/api/listMessage/:id").get(Compaigns.listMessage);
 router.route("/api/listEvent/:start/:end").get(Compaigns.listEvent);
 router.route("/api/countProcess/:username").get(Compaigns.countProcess);
+router.route("/api/ganttChart/:username").get(Compaigns.ganttChart);
 router.route("/api/IsValidToken").post(Auth.IsValidToken);
 router.route("/api/loggedUser").get(Middleware.auth, Auth.LoggedUser);
 
