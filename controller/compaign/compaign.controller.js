@@ -1617,7 +1617,7 @@ module.exports.ganttChart = async (req, res) => {
     
     return res.json(f)
 
-}catch(err){ return res.json({msg: 'app crashed', err: err})}       
+}catch(err){ return res.json({msg: 'app crashed', err: err, f:f})}       
 
 
 
