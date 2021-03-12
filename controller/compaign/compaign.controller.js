@@ -1459,6 +1459,7 @@ module.exports.deleteProcess = async (req, res) => {
 
 module.exports.ganttChart = async (req, res) => {
 
+    try{
 
     var f= []
     var data1 = []
@@ -1616,7 +1617,7 @@ module.exports.ganttChart = async (req, res) => {
     
     return res.json(f)
 
-        
+}catch(err){ return res.json({msg: 'app crashed', err: err})}       
 
 
 
