@@ -1519,34 +1519,28 @@ module.exports.ganttChart = async (req, res) => {
         
     })
 
-    for( var index = 0 ; index < data1.length; index++){
-        var c = {
-            category: "Event",
-            start : data1[index].Start_Date,
-            end : data1[index].End_Date,
-            color: randomColor(),
-            task: data1[index].Title
-        }
-
-        f.push(c)
-    }
-
-    // data1.forEach(element => {
-    //     // var c = {
-    //     //     category: "Event",
-    //     //     start : element.Start_Date,
-    //     //     end : element.End_Date,
-    //     //     color: randomColor(),
-    //     //     task: element["Title"]
-    //     // }
-    //     f.push({
+    // for( var index = 0 ; index < data1.length; index++){
+    //     var c = {
     //         category: "Event",
-    //         start : element.Start_Date,
-    //         end : element.End_Date,
+    //         start : data1[index].Start_Date,
+    //         end : data1[index].End_Date,
     //         color: randomColor(),
-    //         task: element["Title"]
-    //     })       
-    // });
+    //         task: data1[index].Title
+    //     }
+
+    //     f.push(c)
+    // }
+
+    data1.forEach(element => {
+        // var c = {
+        //     category: "Event",
+        //     start : element.Start_Date,
+        //     end : element.End_Date,
+        //     color: randomColor(),
+        //     task: element["Title"]
+        // }
+        f.push(element)       
+    });
 
     // data2.forEach(element => {
 
