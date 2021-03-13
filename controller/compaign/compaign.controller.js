@@ -1540,7 +1540,13 @@ module.exports.ganttChart = async (req, res) => {
         //     color: randomColor(),
         //     task: element["Title"]
         // }
-        f[count] = { message: "hello"}
+        f[count] = {  
+            category: "Event",
+            start : element.Start_Date,
+            end : element.End_Date,
+            color: randomColor(),
+            task: element["Title"]
+        }
         count++       
     });
 
