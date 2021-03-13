@@ -1533,14 +1533,14 @@ module.exports.ganttChart = async (req, res) => {
     // }
 
     data1.forEach(element => {
-        var c = {
-            category: "Event",
-            start : element.Start_Date,
-            end : element.End_Date,
-            color: randomColor(),
-            task: element["Title"]
-        }
-        f[count] = c
+        // var c = {
+        //     category: "Event",
+        //     start : element.Start_Date,
+        //     end : element.End_Date,
+        //     color: randomColor(),
+        //     task: element["Title"]
+        // }
+        f[count] = { message: "hello"}
         count++       
     });
 
