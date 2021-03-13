@@ -1519,88 +1519,88 @@ module.exports.ganttChart = async (req, res) => {
         
     })
 
-    data1.forEach(element => {
+    // data1.forEach(element => {
+    //     var c = {
+    //         category: "Event",
+    //         start : element.Start_Date,
+    //         end : element.End_Date,
+    //         color: randomColor(),
+    //         task: element["Title"]
+    //     }
+    //     f.push(c)       
+    // });
+
+    // data2.forEach(element => {
+
+    //     var c = {
+    //         category: "Digital Add",
+    //         start : element.Start_Date,
+    //         end : element.End_Date,
+    //         color: randomColor(),
+    //         task: element["Title"]
+    //     }
+    //     f.push(c)       
+    // });
+
+    data3.forEach(element => {
+        
         var c = {
-            category: "Event",
-            start : element.Start_Date,
-            end : element.End_Date,
+            category: "Field Operation",
+            start : element["Start_Date"],
+            end : element["End_Date"],
             color: randomColor(),
             task: element["Title"]
         }
         f.push(c)       
     });
 
-    data2.forEach(element => {
-
+    data4.forEach(element => {
+        
         var c = {
-            category: "Digital Add",
-            start : element.Start_Date,
-            end : element.End_Date,
+            category: "Media Add",
+            start : element["Start_Date"],
+            end : element["End_Date"],
             color: randomColor(),
             task: element["Title"]
         }
         f.push(c)       
     });
 
-    // data3.forEach(element => {
+    data5.forEach(element => {
         
-    //     var c = {
-    //         category: "Field Operation",
-    //         start : element["Start_Date"],
-    //         end : element["End_Date"],
-    //         color: randomColor(),
-    //         task: element["Title"]
-    //     }
-    //     f.push(c)       
-    // });
+        var c = {
+            category: "OOH Add",
+            start : element["Start_Date"],
+            end : element["End_Date"],
+            color: randomColor(),
+            task: element["Title"]
+        }
+        f.push(c)       
+    });
 
-    // data4.forEach(element => {
+    data6.forEach(element => {
         
-    //     var c = {
-    //         category: "Media Add",
-    //         start : element["Start_Date"],
-    //         end : element["End_Date"],
-    //         color: randomColor(),
-    //         task: element["Title"]
-    //     }
-    //     f.push(c)       
-    // });
+        var c = {
+            category: "Mailbox",
+            start : element["Start_Date"],
+            end : element["End_Date"],
+            color: randomColor(),
+            task: element["Title"]
+        }
+        f.push(c)       
+    });
 
-    // data5.forEach(element => {
+    data7.forEach(element => {
         
-    //     var c = {
-    //         category: "OOH Add",
-    //         start : element["Start_Date"],
-    //         end : element["End_Date"],
-    //         color: randomColor(),
-    //         task: element["Title"]
-    //     }
-    //     f.push(c)       
-    // });
-
-    // data6.forEach(element => {
-        
-    //     var c = {
-    //         category: "Mailbox",
-    //         start : element["Start_Date"],
-    //         end : element["End_Date"],
-    //         color: randomColor(),
-    //         task: element["Title"]
-    //     }
-    //     f.push(c)       
-    // });
-
-    // data7.forEach(element => {
-        
-    //     var c = {
-    //         category: "Research planning",
-    //         start : element["Start_Date"],
-    //         end : element["End_Date"],
-    //         color: randomColor(),
-    //         task: element["Title"]
-    //     }
-    //     f.push(c)       
-    // });
+        var c = {
+            category: "Research planning",
+            start : element["Start_Date"],
+            end : element["End_Date"],
+            color: randomColor(),
+            task: element["Title"]
+        }
+        f.push(c)       
+    });
 
     // data8.forEach(element => {
         
