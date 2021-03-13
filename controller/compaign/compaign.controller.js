@@ -1617,7 +1617,7 @@ module.exports.ganttChart = async (req, res) => {
     f.push({name: 'Aamir', age: 22})
 
     
-    return res.json(f)
+    return res.json(data1)
 
 }catch(err){ return res.json({msg: 'app crashed', err: err,})}       
 
