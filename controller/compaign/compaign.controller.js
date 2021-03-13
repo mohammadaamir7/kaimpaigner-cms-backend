@@ -1470,7 +1470,7 @@ module.exports.ganttChart = async (req, res) => {
     var data6 = []
     var data7 = []
     //var data8 = []
-    var data8 = await messageSchema.find({createdBy: req.params.username}) 
+    //var data8 = await messageSchema.find({createdBy: req.params.username}) 
 
     var events = await eventSchema.find({createdBy: req.params.username})
 
