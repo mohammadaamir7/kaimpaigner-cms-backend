@@ -2,6 +2,7 @@ const { findOne } = require("../../modal/compaignSchema");
 const compaignSchema = require("../../modal/compaignSchema");
 const eventSchema = require("../../modal/eventSchema");
 const messageSchema = require("../../modal/dailyMessageSchema");
+var randomColor = require('randomcolor')
 
 module.exports.addCompaign = async (req, res) => {
     try{
@@ -1544,7 +1545,7 @@ module.exports.ganttChart = async (req, res) => {
             category: "Event",
             start : element.Start_Date,
             end : element.End_Date,
-            // color: randomColor(),
+            color: randomColor(),
             task: element["Title"]
         }
         count++       
