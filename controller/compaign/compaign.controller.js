@@ -1519,16 +1519,22 @@ module.exports.ganttChart = async (req, res) => {
         
     })
 
-    // data1.forEach(element => {
-    //     var c = {
-    //         category: "Event",
-    //         start : element.Start_Date,
-    //         end : element.End_Date,
-    //         color: randomColor(),
-    //         task: element["Title"]
-    //     }
-    //     f.push(c)       
-    // });
+    data1.forEach(element => {
+        // var c = {
+        //     category: "Event",
+        //     start : element.Start_Date,
+        //     end : element.End_Date,
+        //     color: randomColor(),
+        //     task: element["Title"]
+        // }
+        f.push({
+            category: "Event",
+            start : element.Start_Date,
+            end : element.End_Date,
+            color: randomColor(),
+            task: element["Title"]
+        })       
+    });
 
     // data2.forEach(element => {
 
@@ -1617,7 +1623,7 @@ module.exports.ganttChart = async (req, res) => {
     f.push({name: 'Aamir', age: 22})
 
     
-    return res.json(data1)
+    return res.json(f)
 
 }catch(err){ return res.json({msg: 'app crashed', err: err,})}       
 
