@@ -1462,6 +1462,7 @@ module.exports.ganttChart = async (req, res) => {
     try{
 
     var f= []
+    var count = 0
     var data1 = []
     var data2 = []
     var data3 = []
@@ -1532,14 +1533,15 @@ module.exports.ganttChart = async (req, res) => {
     // }
 
     data1.forEach(element => {
-        // var c = {
-        //     category: "Event",
-        //     start : element.Start_Date,
-        //     end : element.End_Date,
-        //     color: randomColor(),
-        //     task: element["Title"]
-        // }
-        f.push(element)       
+        var c = {
+            category: "Event",
+            start : element.Start_Date,
+            end : element.End_Date,
+            color: randomColor(),
+            task: element["Title"]
+        }
+        f[count] = c
+        count++       
     });
 
     // data2.forEach(element => {
