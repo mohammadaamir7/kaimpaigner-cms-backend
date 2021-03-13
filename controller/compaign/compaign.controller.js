@@ -1469,8 +1469,8 @@ module.exports.ganttChart = async (req, res) => {
     var data5 = []
     var data6 = []
     var data7 = []
-    var data8 = []
-    data8 = await messageSchema.find({createdBy: req.params.username}) 
+    //var data8 = []
+    var data8 = await messageSchema.find({createdBy: req.params.username}) 
 
     var events = await eventSchema.find({createdBy: req.params.username})
 
@@ -1617,7 +1617,7 @@ module.exports.ganttChart = async (req, res) => {
     
     return res.json(f)
 
-}catch(err){ return res.json({msg: 'app crashed', err: err, f:f})}       
+}catch(err){ return res.json({msg: 'app crashed', err: err,})}       
 
 
 
